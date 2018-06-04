@@ -1,0 +1,5 @@
+.idea
+.DS_Store
+public
+deploy
+node_modules

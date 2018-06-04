@@ -1,0 +1,169 @@
+mixin link(title, href, text)
+  -
+    title = title ? title : text
+    text = text ? text : title
+    href = href ? href : '#'
+
+  a(href=href, title=title, target="_blank")&attributes(attributes)
+    if block
+      block
+    else
+      !=text
+
+mixin img(src, alt)
+  -
+    imgAlt = alt ? alt : ''
+    imgSrc = src ? src : 'images/transparent.gif'
+
+  img(src=imgSrc, alt=imgAlt)&attributes(attributes)
+
+mixin iImg(src, alt)
+  -
+    imgAlt = alt ? alt : 'icon'
+    imgSrc = src ? './images/icons/' + src : './images/transparent.gif'
+
+  img(src=imgSrc, alt=imgAlt)&attributes(attributes)
+
+mixin picture(images, alt)
+  -
+    imgAlt = alt ? alt : ''
+
+  picture&attributes(attributes)
+    source(srcset=images.mb media="(max-width: 750px)")
+    img(src=images.ds, alt=imgAlt)
+
+mixin iImg(src, alt)
+  -
+    imgAlt = alt ? alt : 'icon'
+    imgSrc = src ? './images/icons/' + src : './images/transparent.gif'
+
+  img(src=imgSrc, alt=imgAlt)&attributes(attributes)
+
+
+mixin breadcrum(items)
+  ul.breadcrumb
+    for item in items
+      li
+        if(typeof(item.href) !== "undefined")
+          a(href=item.href,title=item.title,target="_blank") #{item.title}
+        else
+          span #{item.title}
+mixin product-item(items)
+  for item in items
+    article.product-item(data-id="1",data-type="product")
+      .img
+        img(alt=item.name,src=item.image,title=item.name)
+      .name
+        h4.title: a(href=item.link,title=item.name,target="_blank") #{item.name}
+        h5.title: a(href=item.link,title=item.nameEN,target="_blank") #{item.nameEN}
+      if(typeof(item.flag) !== "undefined")
+        .flag
+          p #{item.flag}
+      .info
+        h4.title #{item.name}
+        h5.title #{item.nameEN}
+        .desc
+          p #{item.desc}
+        .cta-row
+          a.hidden-phone.btn.btn-third(href=item.link,title=item.name,target="_blank",tabindex="-1") 了解更多
+          a.btn.btn-ico.btn-fav(href='javascript:;',title='添加到收藏夹',tabindex="-1",data-id="1",data-type="product"): span.ico.ico-fav
+mixin news-item(items)
+  for item in items
+    .item-content-wrapper
+      .img-content
+        img(alt=item.name,src=item.image,title=item.name)
+      .desc
+        .desc-heading
+          a(href=item.link,target="_blank")
+            span #{item.heading}
+        .desc-content
+          p #{item.detail}
+        .desc-date-update.number-font
+          p #{item.date}
+mixin product-rec(items)
+  for item in items
+    article.product-item
+      .img
+        img(alt=item.name, src=item.image, title=item.name)
+      .name
+        h4.title: a(href=item.link, title=item.name,target="_blank") #{item.name}
+        h5.title: a(href=item.link, title=item.nameEN,target="_blank") #{item.nameEN}
+
+mixin banner(img)
+    .banner
+        img(alt=img.alt,src=img.src)
+        if(typeof(img.title) !== "undefined")
+            .caption
+                if(img.page=="color_trend_detail")
+                    h1 #{img.title}
+                    .h2-tag
+                        p #{img.sub}
+                else
+                    h1 #{img.title}
+                    if(typeof(img.sub) !== "undefined")
+                        h2 #{img.sub}
+mixin colorTrendItem(items)
+    for item in items
+        .color-trend-item
+            a.color-trend(href=item.link,title=item.title,target="_blank")
+                .img
+                    img(alt=item.title,src=item.img)
+                .caption
+                    h3.year #{item.year}
+                    .desc: p #{item.desc}
+
+mixin decorationItem(items)
+    for item in items
+        article.decoration-item
+            a(href=item.link,title=item.title,target="_blank")
+                img(alt=item.title,src=item.img)
+                h4 #{item.title}
+mixin news-item(items)
+  for item in items
+    .item-content-wrapper
+      .img-content
+        img(alt=item.name,src=item.image,title=item.name)
+      .desc
+        .head-wrapper
+          .desc-heading
+            a(href=item.link,target="_blank")
+              span.heading #{item.heading}
+          .over
+            span ...
+        .desc-content
+          p #{item.desc}
+        .desc-date-update.number-font
+          p #{item.date}
+
+mixin product-color(items)
+    for item in items
+        article.product-item.product-item-color
+            if (item.img)
+                .img
+                    img(src=item.img, alt=item.alt, title=item.title)
+            else 
+                .color(data-color=item.color)
+            .desc
+                .top
+                    .name 
+                        h4.title 
+                            a(href="#", title=item.name, target="_blank") #{item.name}
+                        h5.title
+                            a(href="#", title=item.sub, target="_blank") #{item.sub}
+                        span.ico.ico-trash.btn-trash
+                .bot
+                    .edit
+                        span.ico.ico-tag
+                        span.text #{item.text}
+                        span.ico.ico-note
+mixin other-item(items)
+  for item in items
+    .items
+      .head-wrapper
+        .desc-heading
+          a(href=item.link,target="_blank",title="")
+            span.heading #{item.heading}
+        .over
+          span ...
+      .desc-content
+        p #{item.desc}

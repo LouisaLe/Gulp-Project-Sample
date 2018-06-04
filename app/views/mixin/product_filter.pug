@@ -1,0 +1,106 @@
+mixin product-filter-radio(categoryId,partId,index,value,text)
+	label.radio-box.input-tap(for='radio'+categoryId+partId+index)
+		input(type="radio",id='radio'+categoryId+partId+index,name='radio'+categoryId+partId,value=value)
+		span #{text}
+		| #{text}
+mixin product-filter-checkbox(categoryId,partId,index,value,text,disableBelow,toggleId)
+	if(typeof(disableBelow) !== "undefined") 
+		if(typeof(toggleId) !== "undefined")
+			label.check-box.input-tap(for='checkbox'+categoryId+partId+index,class=disableBelow,data-id=toggleId)
+				input(type="checkbox",id='checkbox'+categoryId+partId+index,name='checkbox'+categoryId+partId,value=value)
+				span #{text}
+				| #{text}
+		else
+			label.check-box.input-tap(for='checkbox'+categoryId+partId+index,class=disableBelow)
+				input(type="checkbox",id='checkbox'+categoryId+partId+index,name='checkbox'+categoryId+partId,value=value)
+				span #{text}
+				| #{text}
+	else
+		if(typeof(toggleId) !== "undefined")
+			label.check-box.input-tap(for='checkbox'+categoryId+partId+index,class=_class,data-id=toggleId)
+				input(type="checkbox",id='checkbox'+categoryId+partId+index,name='checkbox'+categoryId+partId,value=value)
+				span #{text}
+				| #{text}
+		else
+			label.check-box.input-tap(for='checkbox'+categoryId+partId+index,class=_class)
+				input(type="checkbox",id='checkbox'+categoryId+partId+index,name='checkbox'+categoryId+partId,value=value)
+				span #{text}
+				| #{text}
+	
+mixin product-filter(categoryId)
+	.product-filter-wrapper
+		.product-filter-bar
+			.row
+				.col-sm-2
+					label.title 筛选
+				.col-sm-8.col-md-9.hidden-phone
+					ul(id='filterUserChoice'+categoryId).filters-selected
+				.col-sm-2.col-md-1.text-right.hidden-phone
+					a.filter-clear.btn-clear(href="javascript:;",title="清空")
+						span.ico.ico-trash
+						| 清空
+		.product-filter-controls(data-category=categoryId)
+			.filter-part.house-type
+				.form-group.row
+					.col-sm-2
+						label.caption 建筑类型
+					.col-sm-10
+						.form-group.radio-group(data-toggle="PaintSpace"+categoryId)
+							
+							//- +product-filter-radio(categoryId,'HouseType',2,2,'别墅')
+							//- +product-filter-radio(categoryId,'HouseType',3,3,'办公室')
+							//- +product-filter-radio(categoryId,'HouseType',4,4,'商业空间')
+			.filter-part.paint-space.hidden(data-toggle-target="PaintSpace"+categoryId)
+				.form-group.row
+					.col-sm-2
+						label.caption 涂料空间
+					.col-sm-10
+						.form-group.check-group(data-max="5")
+							//- +product-filter-checkbox(categoryId,'PaintSpace',1,1,'客厅')
+							//- +product-filter-checkbox(categoryId,'PaintSpace',2,2,'卧室')
+							//- +product-filter-checkbox(categoryId,'PaintSpace',3,3,'餐厅')
+							//- +product-filter-checkbox(categoryId,'PaintSpace',4,4,'儿童房')
+							//- +product-filter-checkbox(categoryId,'PaintSpace',5,5,'厨房')
+							//- +product-filter-checkbox(categoryId,'PaintSpace',6,6,'卫生间')
+							//- +product-filter-checkbox(categoryId,'PaintSpace',7,7,'其他')
+			.filter-part.product-feature
+				.form-group.row
+					.col-sm-2
+						label.caption 产品优势
+					.col-sm-10
+						.form-group.check-group(data-max="5")
+							//- +product-filter-checkbox(categoryId,'ProductFeature',1,1,'原装进口')
+							//- +product-filter-checkbox(categoryId,'ProductFeature',2,2,'超纯净')
+							//- +product-filter-checkbox(categoryId,'ProductFeature',3,3,'十环认证')
+							//- +product-filter-checkbox(categoryId,'ProductFeature',4,4,'净味')
+							//- +product-filter-checkbox(categoryId,'ProductFeature',5,5,'竹炭')
+							//- +product-filter-checkbox(categoryId,'ProductFeature',6,6,'超低VOC')
+							//- +product-filter-checkbox(categoryId,'ProductFeature',7,7,'全效',true)
+							//- +product-filter-checkbox(categoryId,'ProductFeature',8,8,'五合一')
+							//- +product-filter-checkbox(categoryId,'ProductFeature',9,9,'超白')
+							//- +product-filter-checkbox(categoryId,'ProductFeature',10,10,'抗甲醛')
+							//- +product-filter-checkbox(categoryId,'ProductFeature',11,11,'耐擦洗')
+							//- +product-filter-checkbox(categoryId,'ProductFeature',12,12,'抗菌')
+							//- +product-filter-checkbox(categoryId,'ProductFeature',13,13,'遮盖力强')
+							//- +product-filter-checkbox(categoryId,'ProductFeature',14,14,'抗污')
+			.filter-part.product-price
+				.form-group.row
+					.col-sm-2
+						label.caption 单桶涂料价格
+					.col-sm-10
+						.form-group.radio-group
+							//- +product-filter-radio(categoryId,'Price',1,'100-400','100-400')
+							//- +product-filter-radio(categoryId,'Price',2,'401-800','401-800')
+							//- +product-filter-radio(categoryId,'Price',3,'801-1500','801-1500')
+							//- +product-filter-radio(categoryId,'Price',4,'1500-null','1500以上')
+			.filter-part-cmd.visible-phone
+				a.btn.btn-primary.btn-submit(href="javascript:;",title="完成") 完成
+				a.btn.btn-second.btn-clear(href="javascript:;",title="清空") 清空
+		.product-filter-switch
+			a.filter-toggle(href="javascript:;",title="收 起") 收 起
+
+mixin product-filter-result(categoryId,total)
+	.filter-result-info
+		p 显示 
+			span(id="totalResult"+categoryId).total #{total} 
+			| 件产品

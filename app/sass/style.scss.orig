@@ -1,0 +1,37 @@
+@import 'variables';
+@import 'extend';
+@import 'plugins/select2/core';
+@import 'plugins/swipetab/swipetab';
+@import 'blocks/common';
+@import 'blocks/header';
+@import 'blocks/footer';
+@import 'blocks/storeLocator';
+@import 'blocks/relatedTools';
+@import 'blocks/paintService';
+@import 'blocks/colorInspirations';
+@import 'blocks/seasonColor';
+@import 'blocks/voiceColor';
+@import 'blocks/productFinder';
+@import 'blocks/aboutPPG';
+@import 'blocks/topBanner';
+@import 'blocks/floatToolbar';
+@import 'blocks/bannerVideo';
+@import 'blocks/paging';
+@import 'blocks/loading';
+@import 'blocks/popup';
+
+
+@import 'pages/productDetail';
+@import 'pages/productListingContent';
+@import 'pages/colorPaletteList';
+@import 'pages/colorTrend';
+@import 'pages/colorCollection';
+@import 'pages/colorTrendDetail';
+@import 'pages/colorDetail';
+<<<<<<< HEAD
+@import 'pages/calculator';
+@import 'pages/faq';
+=======
+@import 'pages/paintCalculator';
+@import 'pages/decoration';
+>>>>>>> c02939d8285c17abe2e7abff5a39da69ead13578

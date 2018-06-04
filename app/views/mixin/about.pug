@@ -1,0 +1,12 @@
+mixin aboutSliderVideo(items)
+    for item in items
+        .video-item
+            img(alt=item.alt,src=item.src)
+            a.btn-play(href="javascript:;",title="Play",data-video=item.video)
+                
+mixin aboutSlider(items)
+    for item in items
+        .slider-item
+            img(alt=item.alt, src=item.src)
+            .desc
+                p!=item.text

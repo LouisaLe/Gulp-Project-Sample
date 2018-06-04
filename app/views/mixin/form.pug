@@ -1,0 +1,118 @@
+mixin paintRadio(item)
+    -
+        id = Math.round(Math.random() * 10000)
+
+    .paint-radio&attributes(attributes)
+        input(id=id, type="radio", name=item.name, value=item.value, checked=item.checked, data-target=item.target).paint-radio__input
+        label(for=id).paint-radio__label
+            if item.text
+                span.paint-radio__text!=item.text
+            if block
+                block
+
+mixin customRadio(item)
+    -
+        id = Math.round(Math.random() * 10000)
+
+    .custom-radio&attributes(attributes)
+        input(id=id, type="radio", name=item.name, value=item.value, checked=item.checked).custom-radio__input
+        label(for=id).custom-radio__label
+            if item.text
+                span.custom-radio__text=item.text
+            if block
+                block
+
+mixin customCheck(item)
+    -
+        id = Math.round(Math.random() * 10000)
+
+    div(class=item.disabled).custom-checkbox&attributes(attributes)
+        input(id=id, type="checkbox", name=item.name, value=item.value, checked=item.checked, disabled=item.disabled).custom-checkbox__input
+        label(for=id).custom-checkbox__label
+            if item.text
+                span.custom-checkbox__text!=item.text
+            if block
+                block
+
+mixin customInput(item)
+    -
+        id = Math.round(Math.random() * 10000)
+        type = item.type ? item.type : 'text'
+
+    .form-group.custom-input
+        if item.textLeft
+            label(for=id).custom-input__label.custom-input__label--left
+                !=item.textLeft
+                if(item.required)
+                    span.required!=item.required
+
+        input(type=type, id=id, placeholder=item.placeholder, name=item.name).custom-input__input&attributes(attributes)
+
+        if item.textRight
+            label(for=id).custom-input__label.custom-input__label--right
+                !=item.textRight
+                if(item.required)
+                    span.required!=item.required
+
+mixin customTextarea(item)
+    -
+        id = Math.round(Math.random() * 10000)
+
+    .form-group
+        label(for=id).custom-input__label!=item.label
+            if(item.required)
+                span.required!=item.required
+        textarea(id=id, name=item.name, placeholder=item.placeholder).custom-input__input&attributes(attributes)!=item.text
+
+mixin customSelect(item)
+    -
+        id = Math.round(Math.random() * 10000)
+
+    .form-group
+        .custom-select
+            if item.label
+                label(for=id).custom-select__label
+                    !=item.label
+                    if(item.required)
+                        span.required!=item.required
+            else
+                label.hidden &nbsp;
+            select.selectpicker(id=id, name=item.name)&attributes(attributes)
+                option(value="")!=item.placeholder
+                each val in item.options
+                    option(value=val)!=val
+
+mixin customSelectContactFormRadio(item)
+    -
+        id = "contact_radio"
+
+    .form-group
+        .custom-select
+            if item.label
+                label(for=id).custom-select__label
+                    !=item.label
+                    if(item.required)
+                        span.required!=item.required
+            else
+                label.hidden &nbsp;
+            select.selectpicker(id=id, name=item.name)&attributes(attributes)
+                option(value="")!=item.placeholder
+                each val in item.options
+                    option(value=val)!=val
+mixin customSelectContactForm(item)
+    -
+        id = "contact_question"
+
+    .form-group
+        .custom-select
+            if item.label
+                label(for=id).custom-select__label
+                    !=item.label
+                    if(item.required)
+                        span.required!=item.required
+            else
+                label.hidden &nbsp;
+            select.selectpicker(id=id, name=item.name)&attributes(attributes)
+                option(value="")!=item.placeholder
+                each val in item.options
+                    option(value=val)!=val

@@ -1,0 +1,16 @@
+mixin img-h(w, h, alt)
+  -
+    id = Math.random() * 1000
+    src = '//placeimg.com/'+ w +'/'+ h +'/people?id=' + id
+    alt = alt ? alt : 'alternative information'
+
+  img(src=src, alt=alt)&attributes(attributes)
+
+mixin picture-h(dImg, mImg)
+  -
+    id = Math.random() * 1000
+    mSrc = '//placeimg.com/'+ mImg.w +'/'+ mImg.h +'/people?id=' + id
+
+  picture&attributes(attributes)
+    source(srcset=mSrc, media='(max-width: 750px)')
+    +img-h(dImg.w, dImg.h)
