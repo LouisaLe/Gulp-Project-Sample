@@ -1,6 +1,6 @@
 @import 'variables';
 @import 'plugins/slick/slick';
-// @import 'blocks/common';
+@import 'plugins/slick/slick-theme';
 
 html, body {
     padding: 0;
@@ -33,10 +33,15 @@ img {
     background: hsl(158,58%,52%);
 }
 
+.section-four {
+    background: hsl(28,100%,52%);
+}
+
+
 .section-border {
     width: 80%;
     margin: 0 auto;
-    padding: 50px 0;
+    padding: 80px 0;
 }
 
 .content-wrapper {
@@ -66,7 +71,30 @@ img {
         padding: 0 50px;
     }
 
-    
+    .image-item {
+        max-width: 360px;
+        margin: 0 auto;
+    }
+}
+
+//override slick slider
+.slick-dots li button {
+    background: #fff;
+    opacity: 0.8;
+    border-radius: 10px;
+    height: 10px;
+}
+
+.slick-dots li.slick-active button {
+    opacity: 1;
+}
+
+.slick-dots li button:before {
+    content: "";
+}
+
+.slick-next {
+    background: url("../images/arrow-right.png");
 }
 
 // include footer and header
