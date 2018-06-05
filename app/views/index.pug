@@ -2,16 +2,52 @@
 extends layout/layout
 
 block var
-    - title = "关于PPG大师漆";
-    - keyword = "PPG , MM";
+    - title = "Introduce Page";
+    - keyword = "introduce page";
     - fbURL = "";
     - fbImg = "";
-    - description = "PPG MM site";
+    - description = "Introduce site";
 
 block headAddition
   
 block content
-    h1.visible-heading heading
-    p This is a test page
-    
+    .container
+        h1.visible-heading heading
+        section.section-one
+            .section-border
+                .content-wrapper
+                    .content-image  
+                        .image-item
+                            +img("images/introduce/iphone6-screen-2.jpg")
+                    .content-text
+                        .content-text-border.text--center
+                            .title Lorem
+                            .detail
+                                p Lorem detail
+        section.section-two
+            .section-border
+                .content-wrapper
+                    .content-text
+                        .content-text-border.text--center
+                            .title Lorem
+                            .detail
+                                p Lorem detail
+                    .content-image  
+                        .image-item
+                            +img("images/introduce/iphone6-screen-2.jpg")
+                    
+        section.section-three
+            .section-border
+                .content-wrapper
+                    .content-image  
+                        .image-item
+                            +img("images/introduce/iphone6-screen-2.jpg")
+                    .content-text
+                        .content-text-border.text--center
+                            .title Lorem
+                            .detail
+                                p Lorem detail
+        
+            
+        
 

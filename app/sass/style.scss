@@ -1,5 +1,75 @@
 @import 'variables';
-
 @import 'plugins/slick/slick';
+// @import 'blocks/common';
+
+html, body {
+    padding: 0;
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    height: auto;
+}
+
+.text--center {
+    text-align: center;
+}
+
+.visible-heading {
+    display: none;
+}
+
+.section-one {
+    background: hsl(184,65%,49%);
+}
+
+.section-two {
+    background: hsl(350,92%,59%);
+}
+
+.section-three {
+    background: hsl(158,58%,52%);
+}
+
+.section-border {
+    width: 80%;
+    margin: 0 auto;
+    padding: 50px 0;
+}
+
+.content-wrapper {
+    display: block;
+    width: 100%;
+    font-size: 0;
+    .content-image, .content-text {
+        display: inline-block;
+        vertical-align: top;
+        font-size: 16px;
+    }
+
+    .content-image {
+        width: 33.333%;
+    }
+
+    .content-text {
+        width: 66.6666%;
+
+        .title {
+            font-size: 200%;
+            font-weight: 700;
+        }
+    }
+
+    .content-text-border {
+        padding: 0 50px;
+    }
+
+    
+}
+
+// include footer and header
+
 @import 'blocks/header';
 @import 'blocks/footer';
