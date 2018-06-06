@@ -87,12 +87,33 @@ jQuery(function ($) {
     $(document).ready(function () {
         window.scrollTo(0, 0);
         console.log("I am ready!!");
-
-        $('.slick-wrapper').slick({
-            autoplay: true,
-            autoplaySpeed: 10000,
-            dots: true
-        });
+        var isSlick = false;
+        var listSlick = $('.slick-wrapper');
+        if (listSlick.length === 1 ) {
+            $('.slick-wrapper').children().length > 1 ? isSlick = true : isSlick = false;
+            if (isSlick) {
+                $('.slick-wrapper').slick({
+                    autoplay: true,
+                    autoplaySpeed: 10000,
+                    dots: true
+                });
+            }
+            
+        } else if (listSlick !== 0) {
+            
+            for (var i = 0; i < listSlick.length; i++) {
+                $(listSlick[i]).children().length > 1 ? isSlick = true : isSlick = false;
+                if (isSlick) {
+                    $(listSlick[i]).slick({
+                        autoplay: true,
+                        autoplaySpeed: 10000,
+                        dots: true
+                    });
+                }
+                
+            }
+        }
+        
     });
 
     $(window).on('load', function (e) {

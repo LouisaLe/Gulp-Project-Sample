@@ -13,57 +13,69 @@ block headAddition
 block content
     .container
         h1.visible-heading heading
-        section.section-one
+        section.section-video.white-text
+            .section-border
+                .content-wrapper.video-wrapper-content
+                    .content-image
+                        iframe.video(src='https://www.youtube.com/embed/tgbNymZ7vqY')
+                    .content-text
+                        .content-text-border.text--center
+                            .title This an introduce video
+                            .detail
+                                p Lorem ipsum dolor sit amet, mel fuisset lucilius ne, at solet dictas vituperata vix.
+                #findow-button.text--center
+                    a(href="#next-section").scroll Scroll for more
+        section.section-one.black-text
             .section-border
                 .content-wrapper
                     .content-image.slick-wrapper
                         .image-item
-                            +img("images/introduce/iphone6-screen-2.jpg")
+                            +img("images/introduce/iphone6-screen-2.jpg","image 1")
                         .image-item
-                            +img("images/introduce/iphone6-screen-2.jpg")
+                            +img("images/introduce/iphone6-screen-2.jpg","image 1")
                         .image-item
-                            +img("images/introduce/iphone6-screen-2.jpg")
+                            +img("images/introduce/iphone6-screen-2.jpg","image 1")
                     .content-text
                         .content-text-border.text--center
-                            .title Lorem
+                            .title What is Lorem Ipsum?
                             .detail
-                                p Lorem detail
-        section.section-two
+                                p Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        section.section-two.white-text
             .section-border
                 .content-wrapper
                     .content-text
                         .content-text-border.text--center
-                            .title Lorem
+                            .title Where does it come from?
                             .detail
-                                p Lorem detail
+                                p Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
                     .content-image  
                         .image-item
-                            +img("images/introduce/iphone6-screen-2.jpg")
+                            +img("images/introduce/iphone6-screen-2.jpg","image 1")
                     
-        section.section-three
+        section.section-three.black-text
             .section-border
                 .content-wrapper
                     .content-image  
                         .image-item
-                            +img("images/introduce/iphone6-screen-2.jpg")
+                            +img("images/introduce/iphone6-screen-2.jpg","image 1")
                     .content-text
                         .content-text-border.text--center
-                            .title Lorem
+                            .title Why do we use it?
                             .detail
-                                p Lorem detail
+                                p Lorem detailIt is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
                             .detail
-        section.section-four
+        section.section-four.white-text
             .section-border
                 .content-wrapper
                     .content-text
                         .content-text-border.text--center
-                            .title Lorem
+                            .title Where can I get some?
                             .detail
-                                p Lorem detail
+                                p There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
                             .detail
                     .content-image  
                         .image-item
-                            +img("images/introduce/iphone6-screen-2.jpg")
+                            +img("images/introduce/iphone6-screen-2.jpg","image 1")
                     
         
         
