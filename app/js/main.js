@@ -106,19 +106,52 @@ jQuery(function ($) {
                 if (isSlick) {
                     $(listSlick[i]).slick({
                         autoplay: true,
-                        autoplaySpeed: 10000,
+                        autoplaySpeed: 3000,
                         dots: true
                     });
                 }
                 
             }
         }
+
+        $("#findow-button").on('click',function() {
+            var _h = $('#header').outerHeight();
+            $('html, body').animate({
+                'scrollTop' : $("[data-next-srcoll]").position().top - _h*2
+            },1000);
+        });
+
+        $("#back-to-top").on('click',function() {
+            $('html, body').animate({
+                'scrollTop' : 0
+            },1000);
+        });
+
+        
+
+        fixedMenu();
         
     });
 
     $(window).on('load', function (e) {
         window.scrollTo(0, 0);
-    });       
+    });
+
+    function fixedMenu() {
+        var _header = $('#header');
+        var _h = _header.outerHeight();
+        $(window).scroll(function(){
+            if ($(this).scrollTop() > _h) {
+                if (!_header.hasClass('fixed')) {
+                    _header.addClass('fixed');
+                }
+            } else {
+                if (_header.hasClass('fixed')) {
+                    _header.removeClass('fixed');
+                }
+            }
+        });
+    }
 
 });
 

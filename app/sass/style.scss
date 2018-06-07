@@ -7,6 +7,17 @@ html, body {
     margin: 0;
 }
 
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
 img {
     max-width: 100%;
     display: block;
@@ -25,8 +36,64 @@ img {
     color: #333;
 }
 
+.float-text--right {
+    float: right;
+}
+
 .visible-heading {
     display: none;
+}
+
+//header style
+#header {
+    background: rgba(255, 255, 255, 0.2);
+    width: 100%;
+}
+
+.fixed {
+    position: fixed;
+    z-index: 10;
+}
+
+.header-wrapper {
+    width: 90%;
+    margin: 0 auto;
+    padding: 10px 0;
+
+    .logo, .menu, .menu-border li, .item-icon, .item-desc {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .logo {
+        max-width: 60px;
+        max-height: 60px;
+    }
+
+    .menu {
+        padding-top: 0;
+    }
+
+    .item {
+        margin-right: 15px;
+        position: relative;
+    }
+
+    .item-icon {
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        background: #fff;
+        border: 2px solid #3b5998;
+        position: relative;
+        img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
 }
 
 .section-video {
@@ -34,7 +101,8 @@ img {
 }
 
 .section-one {
-    background: #ffffff;
+    // background: hsl(120, 100%, 30%);
+    background: #9ACD32;
 }
 
 .section-two {
@@ -105,19 +173,9 @@ img {
 }
 
 //override slick slider
-.slick-dots li button {
-    background: #fff;
-    opacity: 0.8;
-    border-radius: 10px;
-    height: 10px;
-}
 
-.slick-dots li.slick-active button {
-    opacity: 1;
-}
-
-.slick-dots li button:before {
-    content: "";
+.slick-dots {
+    display: none !important;
 }
 
 .slick-next {
@@ -126,10 +184,10 @@ img {
 
 .scroll {
     position: relative;
-    font-size: 1.3em;
     margin-top: 20px;
     display: inline-block;
-    height: 100px;
+    font-size: 14px;
+    cursor: pointer;
 }
 
 .scroll::after {
@@ -149,14 +207,65 @@ img {
 }
 
 #findow-button {
-    a, a:hover {
-        text-decoration: none;
-        color: #fff;
-        font-size: 14px;
-    }  
+    margin-top: 30px;
+}
+
+#back-to-top {
+    background-color: hsl(28,100%,52%);
+    padding: 10px 0;
+    padding-bottom: 30px;
+    .scroll::after {
+        top: -20px;
+        transform: rotate(225deg);
+    }
 }
 
 // include footer and header
+#footer {
+    background-color: #333333;
+    padding: 30px 0;
+    .logo {
+        display: inline-block;
+    }
+}
 
-@import 'blocks/header';
-@import 'blocks/footer';
+.download-app {
+    width: 50%;
+    margin: 0 auto;
+    padding-top: 20px;
+    .item {
+        display: inline-block;
+        img {
+            height: 50px;
+        }
+    }
+    .google-play {
+        margin-right: 20px;
+    }
+}
+
+.google-play, .ios-store {
+    max-width: 160px;
+    height: 50px;
+}
+
+.social-tools {
+    padding: 30px 0;
+    a {
+        display: inline-block;
+        padding: 0 10px;
+    }
+}
+
+#header .social-tools {
+    position: absolute;
+    top: 50%;
+    left: -250px;
+    width: auto;
+    padding: 0;
+    transform: translate(0,-50%);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
