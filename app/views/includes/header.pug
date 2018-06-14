@@ -1,32 +1,17 @@
 - var active;
-header#header
+header#header.header
     .container
         .header-wrapper
             .logo
-                +img("images/introduce/test-logo.png", "Logo")
-            .menu.float-text--right
+                +img("images/introduce/typimix.png", "Logo")
+            .menu
+                //- .mobile-menu
                 ul.menu-border
                     li
                         .item
                             .item-icon
-                                +img("images/introduce/social-icons.png", "Social Network")
-                            .item-desc Contact
-                            .social-tools
-                                a(href="#" target="_blank")
-                                    +img("images/introduce/fb.png", "Facebook")
-                                a(href="#" target="_blank")
-                                    +img("images/introduce/instagram.png", "Instagram")
-                                a(href="#" target="_blank")
-                                    +img("images/introduce/pinterest.png", "Printest")
-                                a(href="#" target="_blank")
-                                    +img("images/introduce/twitter.png", "Twitter")
-                                a(href="#" target="_blank")
-                                    +img("images/introduce/in.png", "LinkedIn")
-
-                    li
-                        .item
-                            .item-icon
-                                +img("images/introduce/customer-service-icon.png", "Social Network")
+                                a(href="mailto:someone@example.com?Subject=What do you want to support?")
+                                    +img("images/introduce/mail.png", "Social Network")
                             .item-desc Support
                     
 

@@ -13,34 +13,36 @@ block headAddition
 block content
     .container
         h1.visible-heading heading
-        section.section-video.white-text
+        section.section-scroll.section-video.white-text
             .section-border
                 .content-wrapper.video-wrapper-content
                     .content-image
                         iframe.video(src='https://www.youtube.com/embed/tgbNymZ7vqY')
+                        //- video(controls='false' autoplay='' loop='' muted='')
+                        //-     source(src='https://www.youtube.com/embed/tgbNymZ7vqY' type='video/mp4')
                     .content-text
-                        .content-text-border.text--center
+                        .content-text-border.text--center 
                             .title This an introduce video
                             .detail
                                 p Lorem ipsum dolor sit amet, mel fuisset lucilius ne, at solet dictas vituperata vix.
                 #findow-button.text--center
-                    span.scroll Scroll for more
-        section.section-one.black-text(data-next-srcoll)
+                    span.scroll.bounce Scroll for more
+        section.section-scroll.section-one.white-text(data-next-srcoll)
             .section-border
                 .content-wrapper
                     .content-image.slick-wrapper
                         .image-item
                             +img("images/introduce/iphone6-screen-2.jpg","image 1")
                         .image-item
-                            +img("images/introduce/iphone6-screen-2.jpg","image 1")
+                            +img("images/introduce/iphone-6_Screen_Gradient.jpg","image 2")
                         .image-item
-                            +img("images/introduce/iphone6-screen-2.jpg","image 1")
+                            +img("images/introduce/iphone-6_Screen_Style.jpg","image 3")
                     .content-text
                         .content-text-border.text--center
                             .title What is Lorem Ipsum?
                             .detail
                                 p Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-        section.section-two.white-text
+        section.section-scroll.section-two.white-text
             .section-border
                 .content-wrapper
                     .content-text
@@ -52,7 +54,7 @@ block content
                         .image-item
                             +img("images/introduce/iphone6-screen-2.jpg","image 1")
                     
-        section.section-three.black-text
+        section.section-scroll.section-three.white-text
             .section-border
                 .content-wrapper
                     .content-image  
@@ -64,7 +66,7 @@ block content
                             .detail
                                 p Lorem detailIt is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
                             .detail
-        section.section-four.white-text
+        section.section-scroll.section-four.white-text
             .section-border
                 .content-wrapper
                     .content-text
@@ -76,8 +78,20 @@ block content
                     .content-image  
                         .image-item
                             +img("images/introduce/iphone6-screen-2.jpg","image 1")
-        #back-to-top.white-text.text--center
-            span.scroll Back to Top
+                #back-to-top.white-text.text--center
+                    span.scroll.bounce Back to Top
+        .float-tool
+            .social-tools
+                a(href="https://www.facebook.com/" target="_blank")
+                    +img("images/introduce/fb.png", "Facebook")
+                a(href="https://www.instagram.com/" target="_blank")
+                    +img("images/introduce/instagram.png", "Instagram")
+                a(href="https://www.pinterest.com/" target="_blank")
+                    +img("images/introduce/pinterest.png", "Printest")
+                a(href="https://twitter.com/" target="_blank")
+                    +img("images/introduce/twitter.png", "Twitter")
+                a(href="https://www.linkedin.com" target="_blank")
+                    +img("images/introduce/in.png", "LinkedIn")
                     
         
         

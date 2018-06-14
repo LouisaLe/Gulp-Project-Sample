@@ -41,11 +41,11 @@ $slick-opacity-not-active: 0.25 !default;
 
 /* Slider */
 
-.slick-list {
-    .slick-loading & {
-        background: #fff slick-image-url("ajax-loader.gif") center center no-repeat;
-    }
-}
+// .slick-list {
+//     .slick-loading & {
+//         background: #fff slick-image-url("ajax-loader.gif") center center no-repeat;
+//     }
+// }
 
 /* Icons */
 @if $slick-font-family == "slick" {

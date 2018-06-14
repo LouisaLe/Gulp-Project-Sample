@@ -82,7 +82,7 @@ gulp.task('sprites-hover', function () {
 gulp.task('sass', function(){
   var files = [
     [
-      path.dev.sass + "**/style.scss", path.dev.css + "bootstrap.min.css", path.deploy.css
+      path.dev.sass + "**/style.scss", path.deploy.css
     ]
   ];
   for (var key in files){
@@ -147,7 +147,7 @@ gulp.task('pug', function(){
 // Task js for deploy
 gulp.task('js', function(){ 
   return concatMulti({
-    'app.js': [ path.dev.js+'libs/jquery.min.js',path.dev.js+'libs/bootstrap.min.js',path.dev.js+'libs/plugins/*.js',path.dev.js+'main.js']
+    'app.js': [ path.dev.js+'libs/jquery.min.js',path.dev.js+'libs/plugins/*.js',path.dev.js+'main.js']
   })
     .pipe(strip())
     .pipe(uglify())
@@ -158,7 +158,7 @@ gulp.task('js', function(){
 // Task js for dev
 gulp.task('js-dev', function(){
   return concatMulti({
-    'app.js': [ path.dev.js+'libs/jquery.min.js',path.dev.js+'libs/bootstrap.min.js',path.dev.js+'libs/plugins/*.js',path.dev.js+'main.js']
+    'app.js': [ path.dev.js+'libs/jquery.min.js',path.dev.js+'libs/plugins/*.js',path.dev.js+'main.js']
   })
   //.pipe(jshint('.jshintrc'))
   .pipe(jshint.reporter('default'))
@@ -182,7 +182,7 @@ gulp.task('tinypng', function () {
 
 // Task copy
 gulp.task('copy', function(){
-  gulp.src(path.dev.css + 'bootstrap.min.css').pipe(gulp.dest(path.deploy.css));
+  // gulp.src(path.dev.css + 'bootstrap.min.css').pipe(gulp.dest(path.deploy.css));
 
   // gulp.src([
   //           path.dev.js + 'libs/jquery.min.js',
@@ -209,7 +209,7 @@ gulp.task('copy', function(){
 // Task copy for dev
 gulp.task('copy-dev', function(){
   //gulp.src(path.dev.sass).pipe(gulp.dest(path.public.css));
-  gulp.src(path.dev.css + 'bootstrap.min.css').pipe(gulp.dest(path.public.css));
+  // gulp.src(path.dev.css + 'bootstrap.min.css').pipe(gulp.dest(path.public.css));
 
   /*gulp.src([
             path.dev.js + 'libs/jquery.min.js',
@@ -223,6 +223,9 @@ gulp.task('copy-dev', function(){
           .pipe(gulp.dest(path.public.js));
   gulp.src( path.dev.font + '*')
       .pipe(gulp.dest(path.public.font));
+
+  gulp.src( path.dev.css + 'w3.min.css')
+      .pipe(gulp.dest(path.public.css));
 
   gulp.src( path.dev.image +'**/*')
       .pipe(gulp.dest(path.public.image));
